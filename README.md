@@ -25,18 +25,18 @@ Django, Python, HTML, CSS
 1. You should have Python installed on your computer.It's advised you create a virtual environment to store your projects dependencies separately.You can install virtual environment with
 <br> ```
        py -m venv "name_of_environment"
-        name_of_environment\Scripts\activate
+         name_of_environment\Scripts\activate
        ```
 <br>
 2. Clone this repository and open it in your editor of choice. In a terminal (mac/linux) or windows terminal, run the following command in the base directory of this project
 <br>
 3. Open the command prompt (in windows "win+R") in the project directory.Then run the application using the following command
 <br>  
-```
-         py manage.py makemigrations
-         py manage.py migrate
-         py manage.py runserver
-```
+<ul>
+         <li>py manage.py makemigrations</li>
+         <li>py manage.py migrate</li>
+         <li>py manage.py runserver</li>
+</ul>
 <br>
 ## Installation
 
