@@ -1,0 +1,84 @@
+<html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    .calculator {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        color: rgb(97, 93, 93);
+    }
+
+    #cgpa {
+        font-weight: bold;
+    }
+
+    button {
+        padding: 10px;
+        color: black;
+        border: none;
+        font-size: 13px;
+        font-weight: bold;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-left:655px
+    }
+</style>
+<body>
+    <div id="mn" class="calculator" >
+        <img style="width: 530px; height:160px; margin-left:30px" src="https://sastraonline.in/assets/imgs/sastra-head-logo.png" alt="">
+        <br>
+        <br>
+        <table>
+            <tr>
+                <th>SUBJECT CODE</th>
+                <th>SUBJECT NAME</th>
+                <th>GRADE</th>
+                <th>CREDIT</th>
+            </tr>
+            {% for subject in subjects %}
+            <tr>
+                <td style="font-family: 'Times New Roman', Times, serif;">{{ subject.code }}</td>
+                <td style="font-family: 'Times New Roman', Times, serif;">{{ subject.name }}</td>
+                <td style="font-family: 'Times New Roman', Times, serif;">{{ subject.grade }}</td>
+                <td style="font-family: 'Times New Roman', Times, serif;">{{ subject.credit }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h3 style="font-family: 'Times New Roman', Times, serif;">CGPA: <span id="cgpa">{{cgpa}}</span></h3>
+    </div>
+    <br>
+    <button onclick="myfun('mn')" type="button" class="btn btn-success btn1 ">Click here to download PDF</button>
+    <script type="text/javascript">
+        function myfun(pa) {
+            let d = document.getElementById(pa).innerHTML;
+            document.body.innerHTML = d;
+            window.print();
+        }
+    </script>
+</body>
+</html>

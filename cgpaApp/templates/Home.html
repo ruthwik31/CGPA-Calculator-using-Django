@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    #calculator {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    h1{
+        color: #333;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    button {
+        padding: 10px;
+        color: black;
+        border: none;
+        font-size: 13px;
+        font-weight: bold;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #d9dad9d7;
+        color: rgb(97, 93, 93);
+    }
+    #cgpa {
+        font-weight: bold;
+    }
+    a{
+        color: black;
+    }
+</style>
+<body>
+<div id="calculator">
+    <h1 style="color: rgb(41, 7, 88);">SASTRA UNIVERSITY</h1>
+    <h2 style="font-family: 'Times New Roman', Times, serif; text-align:center;">CGPA Calculator</h2>
+    <br>
+    <form method="post" action="{% url 'cal_cgpa' %}">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Add Subject</button>
+            <button> <a href="{% url 'result' %}">Generate Result</a></button>
+    </form>
+   <br>
+    <table>
+        <tr>
+            <th>SUBJECT CODE</th>
+            <th>SUBJECT NAME</th>
+            <th>GRADE</th>
+            <th>CREDIT</th>
+            <th>Actions</th>
+        </tr>
+
+                {% for subject in subjects %}
+            <tr>
+                <td style="font-family: 'Times New Roman', Times, serif;">{{ subject.code }}</td>
+                <td style="font-family: 'Times New Roman', Times, serif;">{{ subject.name }}</td>
+                <td style="font-family: 'Times New Roman', Times, serif;">{{ subject.grade }}</td>
+                <td style="font-family: 'Times New Roman', Times, serif;">{{ subject.credit }}</td>
+                <td>
+                  <button><a  href="{% url 'subj_edit' subject.id %}">Edit</a></button> 
+                  <button><a href="{% url 'subj_delete' subject.id %}">Delete</a></button> 
+                </td>
+            </tr>
+                {% endfor %}
+    </table>
+</div>
+</body>
+</html>

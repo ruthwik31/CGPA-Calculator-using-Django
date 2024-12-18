@@ -1,0 +1,53 @@
+<html>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #calculator {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        button {
+            padding: 10px;
+            color: black;
+            border: none;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        a {
+            color: black;
+        }
+    </style>
+
+
+    <div id="calculator">
+        <br>
+
+        <h2 style="text-align: center;">Edit Subject</h2>
+        <br>
+        <form method="post" action="{% url 'subj_edit' subject_id=subject_id %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit">Save Changes</button>
+        </form>
+        <br>
+        <button><a href="{% url 'cal_cgpa' %}">Cancel</a></button>
+
+    </div>
+</body>
+</html>
