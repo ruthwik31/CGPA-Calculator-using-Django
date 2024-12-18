@@ -116,7 +116,7 @@ def login_page(request):
         user_obj = authenticate(username=username, password=password)  
         if user_obj:
             login(request, user_obj)
-            return redirect('cgpa_calculator') 
+            return redirect('cal_cgpa') 
         else:
             messages.error(request, "Invalid username or password")
             return redirect('/login/')

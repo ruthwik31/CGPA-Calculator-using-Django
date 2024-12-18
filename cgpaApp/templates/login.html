@@ -9,6 +9,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>CGPA Calculator</title>
+
     <style>
         body {
             background-color: #f8f9fa;
@@ -39,9 +40,9 @@
         }
 
         button {
-            background-color: #4e5461 !important; /* Use !important to override */
-            color: white !important;
-            border: none !important;
+            background-color: #007bff;
+            color: white;
+            border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
@@ -50,11 +51,11 @@
         }
 
         button:hover {
-            background-color: #323941;
+            background-color: #0056b3;
         }
 
         .form-group a {
-            color: #2c3c43;
+            color: #007bff;
             text-decoration: none;
         }
 
@@ -94,7 +95,7 @@
                 </div>
             </form>
             <p class="text-center mt-3" style="color: #555;">
-                Don't have an accounashhascbt? <a href="{% url 'register' %}">Create an Account</a>
+                Don't have an account? <a href="{% url 'register' %}">Create an Account</a>
             </p>
         </div>
     </div>
