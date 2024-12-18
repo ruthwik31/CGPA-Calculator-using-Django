@@ -23,10 +23,11 @@ Django, Python, HTML, CSS
 ## To run this project
 
 1. You should have Python installed on your computer.It's advised you create a virtual environment to store your projects dependencies separately.You can install virtual environment with
-<br> ```
-       py -m venv "name_of_environment"
-         name_of_environment\Scripts\activate
-       ```
+<br>
+<ul>
+       <li>py -m venv "name_of_environment"</li>
+       <li>name_of_environment\Scripts\activate</li>
+</ul>
 <br>
 2. Clone this repository and open it in your editor of choice. In a terminal (mac/linux) or windows terminal, run the following command in the base directory of this project
 <br>
@@ -42,7 +43,7 @@ Django, Python, HTML, CSS
 
 1. Clone the repository:
    ```bash
-   https://github.com/yourusername/CGPA-Calculator-using-Django.git
+   https://github.com/ruthwik31/CGPA-Calculator-using-Django.git
    cd CGPA-Calculator-using-Django
 
 ## Project ScreenShots
